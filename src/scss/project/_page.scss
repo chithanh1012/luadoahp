@@ -40,6 +40,8 @@
   }
 }
 
-.p-page-service-content {
+.p-page-service-content,
+.p-page-news-content {
   @include responsive.size(margin-top, 60, 120);
+  @include responsive.size(margin-bottom, 60, 120);
 }
