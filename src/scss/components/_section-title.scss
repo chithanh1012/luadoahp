@@ -1,0 +1,27 @@
+@use 'mixins/responsive';
+@use 'variables/design';
+
+.c-section-title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  &.title-white {
+    color: #fff;
+  }
+  &.title-black {
+    color: #000;
+  }
+}
+
+.c-section-title__en {
+  font-family: design.$base-font-family-en;
+  line-height: 1.3;
+  @include responsive.rfs(60, 30);
+}
+
+.c-section-title__jp {
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  @include responsive.rfs(25, 18);
+}

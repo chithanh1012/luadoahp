@@ -1,0 +1,12 @@
+//- ページのパーツは/components配下に
+mixin example-table(headerColumns, bodyRows)
+  table.example-table
+    thead
+      tr.example-table-row
+        each col in headerColumns
+          th.example-table-col!= col
+    tbody
+      each bodyRow in bodyRows
+        tr.example-table-row
+          each bodyCol in bodyRow
+            td.example-table-col!= bodyCol

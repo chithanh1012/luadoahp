@@ -1,0 +1,167 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables/breakpoint';
+
+@mixin min($breakpoint) {
+  $w: map.get(breakpoint.$breakpoints, $breakpoint);
+
+  @if $w == 0 {
+    @content;
+  } @else {
+    @media screen and (min-width: $w) {
+      @content;
+    }
+  }
+}
+
+@mixin max($breakpoint) {
+  $w: map.get(breakpoint.$breakpoints, $breakpoint);
+
+  @if $w == 0 {
+    @content;
+  } @else {
+    @media screen and (max-width: ($w - 0.02)) {
+      @content;
+    }
+  }
+}
+
+@mixin only($breakpoint) {
+  $w: map.get(breakpoint.$breakpoints, $breakpoint);
+  $nw: map.get(breakpoint.$breakpoints, getNextBreakpoint($breakpoint));
+
+  @media screen and (min-width: $w) and (max-width: ($nw - 0.02)) {
+    @content;
+  }
+}
+
+@function getNextBreakpoint($breakpoint) {
+  $next: '';
+  $isNext: 0;
+  @each $bp, $w in breakpoint.$breakpoints {
+    @if $isNext == 1 {
+      $next: $bp;
+      $isNext: 0;
+    } @else if $bp == $breakpoint {
+      $isNext: 1;
+    }
+  }
+  @return $next;
+}
+
+@mixin pc {
+  @include min(pc) {
+    @content;
+  }
+}
+
+@mixin tablet-pc {
+  @include min(tablet) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include only(tablet) {
+    @content;
+  }
+}
+
+@mixin sp-tablet {
+  @include max(pc) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @include max(tablet) {
+    @content;
+  }
+}
+
+@function pxtovw($num, $width) {
+  @return math.div(1vw * $num, $width) * 100;
+}
+
+@function rvw($size, $breakpoint) {
+  @return pxtovw($size, map.get(breakpoint.$viewports, $breakpoint));
+}
+
+@function calcSize($sp-size, $pc-size, $tablet-size: null) {
+  @if not $tablet-size {
+    $tablet-size: $pc-size;
+  }
+
+  $p: rvw($pc-size, pc);
+  $t: rvw($tablet-size, tablet);
+  $s: rvw($sp-size, sp);
+
+  @if $sp-size < 0 {
+    @return (
+      sp: #{$s},
+      tablet: max(#{$t}, #{$tablet-size}px),
+      pc: max(#{$p}, #{$pc-size}px)
+    );
+  } @else {
+    @return (
+      sp: #{$s},
+      tablet: min(#{$t}, #{$tablet-size}px),
+      pc: min(#{$p}, #{$pc-size}px)
+    );
+  }
+}
+
+@mixin size($property, $sp-size, $pc-size, $tablet-size: null) {
+  $sizes: calcSize($sp-size, $pc-size, $tablet-size);
+
+  #{$property}: map.get($sizes, sp);
+  @include tablet {
+    #{$property}: map.get($sizes, tablet);
+  }
+  @include tablet-pc {
+    #{$property}: map.get($sizes, pc);
+  }
+}
+
+@mixin sizeI($property, $sp-size, $pc-size, $tablet-size: null) {
+  $sizes: calcSize($sp-size, $pc-size, $tablet-size);
+
+  #{$property}: map.get($sizes, sp) !important;
+  @include tablet {
+    #{$property}: map.get($sizes, tablet) !important;
+  }
+  @include tablet-pc {
+    #{$property}: map.get($sizes, pc) !important;
+  }
+}
+
+// Responsive Font Size
+@mixin rfs($pc-font-size, $sp-font-size: null, $tablet-font-size: null) {
+  @if not $tablet-font-size {
+    $tablet-font-size: $pc-font-size;
+  }
+  @if not $sp-font-size {
+    $sp-font-size: $pc-font-size * 0.75;
+  }
+  @include size(font-size, $sp-font-size, $pc-font-size, $tablet-font-size);
+}
+// デザインがPCのみの場合は↓を使う（フォントサイズの係数は調整してください）
+// @mixin rfs($pc-font-size) {
+//   $sp-font-size: $pc-font-size * 0.75;
+//   @include size(font-size, $sp-font-size, $pc-font-size);
+// }
+
+// 図やKVのように、要素をabsoluteで配置する場合に使用
+@mixin percentLayout(
+  $left,
+  $top,
+  $width,
+  $height,
+  $containerWidth,
+  $containerHeight
+) {
+  height: math.div($height, $containerHeight) * 100%;
+  left: math.div($left, $containerWidth) * 100%;
+  top: math.div($top, $containerHeight) * 100%;
+  width: math.div($width, $containerWidth) * 100%;
+}

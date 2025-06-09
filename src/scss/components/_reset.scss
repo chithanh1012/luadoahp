@@ -1,0 +1,31 @@
+// =============================================
+// Reset
+// =============================================
+@use '~normalize.css/normalize';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[type='text'],
+[type='email'],
+[type='number'],
+[type='tel'],
+[type='password'],
+[type='search'],
+[type='url'],
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: normal;
+}
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}

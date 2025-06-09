@@ -1,0 +1,60 @@
+meta(charset="UTF-8")
+meta(name="viewport" content="width=device-width")
+meta(name="format-detection" content="telephone=no,email=no,address=no")
+title #{page_title}
+if robots
+  meta(name="robots" content=robots)
+if keywords
+  meta(name="keywords" content=keywords ? keywords : base_keywords)
+if description
+  meta(name="description" content=description)
+if canonical
+  link(rel="canonical" href=`${canonical.indexOf('http') === 0 ? canonical : base_url + canonical}`)
+if og_title || page_title
+  meta(property="og:title" content=og_title || page_title)
+if og_description || description
+  meta(property="og:description" content=og_description || description)
+if og_type
+  meta(property="og:type" content=og_type)
+if og_url || canonical
+  - const _url = og_url || canonical
+  meta(property="og:url" content=`${_url.indexOf('http') === 0 ? _url : base_url + _url}`)
+if og_image
+  meta(property="og:image" content=`${og_image.indexOf('http') === 0 ? og_image : base_url + og_image}`)
+if twitter_card
+  meta(name="twitter:card" content=twitter_card)
+if twitter_site
+  meta(name="twitter:site" content=twitter_site)
+if fb_app_id
+  meta(property="fb:app_id" content=fb_app_id)
+
+//- metaは適宜追加・削除してください
+//-   cf. https://developer.mozilla.org/ja/docs/Web/HTML/Element/meta
+
+//- ★アイコン周りの作成
+//-   cf. https://realfavicongenerator.net/
+//-   cf. https://ao-system.net/favicongenerator/
+//- ★favicon
+//- link(rel="icon" type="image/png" href="/images/common/icon-192x192.png")
+
+//- ★iOS ホーム画面
+//- link(rel="apple-touch-icon" type="image/png" href="/images/common/apple-touch-icon-180x180.png")
+//- meta(name="apple-mobile-web-app-title" content="ダミータイトル")
+
+//- ★対応しているカラースキーマ
+//- meta(name="color-scheme" content="dark light")
+
+//- ★Android アドレスバーの色
+//- meta(name="theme-color" content="#ffffff")
+
+//- ★Windows ピン留め時の見た目
+//- meta(name="msapplication-config" content="/config/browserconfig.xml")
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<!-- SwiperとjQueryの読み込み -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

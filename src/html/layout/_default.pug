@@ -1,0 +1,24 @@
+doctype html
+include /template/_config.pug
+include /components/_components.pug
+block variable
+html(lang="ja")
+  head(prefix=`og: https://ogp.me/ns# article: https://ogp.me/ns/article# website: https://ogp.me/ns/website#base fb: https://ogp.me/ns/fb#`)
+    block common_head
+      include /template/_common_head.pug
+    block common_css
+      include /template/_common_css.pug
+    block head
+
+  body.layout-default
+    header.l-header#pagetop
+      block header
+        +header()
+    main.l-main
+      block content
+    footer.l-footer
+      block footer
+        +footer()
+    block common_script
+      include /template/_common_script.pug
+    block script

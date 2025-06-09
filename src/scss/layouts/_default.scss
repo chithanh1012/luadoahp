@@ -1,0 +1,22 @@
+@use 'mixins/responsive';
+@use 'variables/design';
+
+.layout-default {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  .l-header {
+    flex: 0 0 auto;
+  }
+  .l-main {
+    flex: 1 1 auto;
+  }
+
+  .l-footer {
+    flex: 0 0 auto;
+  }
+}

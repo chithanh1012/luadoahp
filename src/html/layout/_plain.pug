@@ -1,0 +1,10 @@
+doctype html
+include /template/_config.pug
+include /components/_components.pug
+block variable
+html(lang="ja")
+  head(prefix=`og: https://ogp.me/ns# article: https://ogp.me/ns/article# website: https://ogp.me/ns/website#base fb: https://ogp.me/ns/fb#`)
+    block head
+
+  body
+    block body

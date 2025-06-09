@@ -1,0 +1,205 @@
+extends /layout/_default.pug
+include /components/_components.pug
+
+//- meta関係は変数を上書きします
+//- 指定しない場合、_config.pug の内容が反映されます。
+//- metaが足りない場合、個別対応ならheadブロックに記載、共通なら_common_head.pugに追記してください
+block variable
+  - page_title = 'インデックスページ'
+  - description = 'indexページの概要文が入ります'
+  - canonical = '';
+  - og_description = "og:descriptionに入れる内容。省略時はdescriptionが入ります";
+  - og_url = "";
+  - og_image = "";
+  - twitter_card = "summary_large_image";
+//- headの最後に入れるもの(追加のmetaやCSS,gtm等のheadに置くJS等)
+block head
+
+//- bodyの最後に入れるもの
+block script
+
+//- メインエリアに入れるもの
+block content
+  section.p-top-fv.fv
+    .swiper#mainSlider
+      .swiper-wrapper.p-top-fv__image
+        img(src="../images/top/top-fv-01.png", alt="").swiper-slide
+        img(src="../images/top/top-fv-02.png", alt="").swiper-slide
+        img(src="../images/top/top-fv-03.png", alt="").swiper-slide
+        //- .swiper-slide(style="background-image: url('../assets/images/top/top-fv-01.png')")
+        //- .swiper-slide(style="background-image: url('/assets/top/top-fv-01.png')")
+        //- .swiper-slide(style="background-image: url('/assets/top/top-fv-01.png')")
+    .fv__overlay
+      h2.p-top-fv__title 共に成果をつくる<br>マーケティング<br>
+        span.p-top-fv__subtitle MARKETING PARTNER
+      .fv__controls
+        .fv__progress
+          .fv__progress-bar
+        button#sliderToggle.playing ⏸︎
+      .slide-count
+        span.current-slide 01
+        |  / 
+        span.total-slides 04
+    .c-btn-black.p-top-fv__btn
+      a(href="").c-btn-black__link.v-pc 無料相談・お問合せはこちら
+  section.p-top-feature
+    .inner 
+      h2.c-section-title.title-white
+        .c-section-title__en FEATURE 
+        .c-section-title__jp 弊社の特徴
+      .p-top-feature__wrap 
+        .p-top-feature__blcok 
+          img(src="../images/top/feature-01.png", alt="")
+          h3.p-top-feature__ttl-en Expert Assigned
+            p.p-top-feature__ttl-jp 対応内容ごとに<br>
+              span 専門家が対応
+        .p-top-feature__blcok 
+          img(src="../images/top/feature-05.png", alt="")
+          h3.p-top-feature__ttl-en In-house Talent
+            p.p-top-feature__ttl-jp 自社に
+              span 優秀な<br>エンジニア
+              | が多数在籍
+        .p-top-feature__blcok 
+          img(src="../images/top/feature-02.png", alt="")
+          h3.p-top-feature__ttl-en Global Dev
+            p.p-top-feature__ttl-jp
+              span ベトナム開発チーム<br>
+              | によるコスト最適化
+        .p-top-feature__blcok 
+          img(src="../images/top/feature-03.png", alt="")
+          h3.p-top-feature__ttl-en Tailored Approach
+            p.p-top-feature__ttl-jp
+              span お客様ごとにカスタム設計<br>
+              | 最適な手法を提案
+        .p-top-feature__blcok.v-pc
+          img(src="../images/top/feature-04.png", alt="")
+          h3.p-top-feature__ttl-en Strategic Partner
+            p.p-top-feature__ttl-jp
+              span 経営目線で伴走する<br>
+              | スタンス
+      .c-btn-black.p-top-feature__btn
+        a(href="").c-btn-black__link 事業内容一覧を見る
+  section.p-top-news 
+    .inner 
+      .p-top-news__wrap
+        .p-top-news__left
+          h2.c-section-title.title-black
+            .c-section-title__en NEWS
+        .p-top-news__right 
+          .p-top-news__item 
+            a(href="").p-top-news__link
+              .p-top-news__column
+                .p-top-news__columnLeft
+                  .p-top-news__day 2025.00.00
+                  .p-top-news__category NEWS
+                .p-top-news__columnRight
+                  .p-top-news__title テストテストテストテストテストテスト
+          .p-top-news__item 
+            a(href="").p-top-news__link
+              .p-top-news__column
+                .p-top-news__columnLeft
+                  .p-top-news__day 2025.00.00
+                  .p-top-news__category CUSTOMER
+                .p-top-news__columnRight
+                  .p-top-news__title テストテストテストテストテストテスト
+  section.p-top-customer 
+    h2.c-section-title.title-white.p-top-customer__title
+      .c-section-title__en CUSTOMER 
+      .c-section-title__jp 顧客満足度95%を誇る支援実績
+    .inner 
+      .p-top-customer__wrap 
+        .p-top-customer__block 
+          img(src="../images/top/customer-01.png", alt="").p-top-customer__image
+          .p-top-customer__bt
+            h3.p-top-customer__Ttl テスト株式会社<br>
+              span.p-top-customer__subTtl CV率とセッション数の向上
+            .p-top-customer__btWrap
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 成果
+                span.p-top-customer__itemContent CV率5％UP、セッション数5倍
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 業種
+                span.p-top-customer__itemContent 補助金・助成金コンサル業
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 支援内容
+                span.p-top-customer__itemContent WEBマーケティングコンサル
+        .p-top-customer__block 
+          img(src="../images/top/customer-02.png", alt="").p-top-customer__image
+          .p-top-customer__bt
+            h3.p-top-customer__Ttl テスト株式会社<br>
+              span.p-top-customer__subTtl CV率とセッション数の向上
+            .p-top-customer__btWrap
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 成果
+                span.p-top-customer__itemContent CV率5％UP、セッション数5倍
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 業種
+                span.p-top-customer__itemContent 補助金・助成金コンサル業
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 支援内容
+                span.p-top-customer__itemContent WEBマーケティングコンサル
+        .p-top-customer__block 
+          img(src="../images/top/customer-03.png", alt="").p-top-customer__image
+          .p-top-customer__bt
+            h3.p-top-customer__Ttl テスト株式会社<br>
+              span.p-top-customer__subTtl CV率とセッション数の向上
+            .p-top-customer__btWrap
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 成果
+                span.p-top-customer__itemContent CV率5％UP、セッション数5倍
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 業種
+                span.p-top-customer__itemContent 補助金・助成金コンサル業
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 支援内容
+                span.p-top-customer__itemContent WEBマーケティングコンサル
+  section.p-top-service 
+    .p-top-service__wrap 
+      .p-top-service__left 
+        img(src="../images/top/top-service-left.png", alt="")
+      .p-top-service__right 
+        h2.c-section-title.title-white
+          .c-section-title__en SERVICE 
+          .c-section-title__jp 事業内容
+        .p-top-service__content 
+          a(href="").p-top-service__item
+            span.p-top-service__title WEB集客コンサルティング<br>
+            span.p-top-service__subTitle WEB MARKETING SOLUTION
+          a(href="").p-top-service__item
+            span.p-top-service__title SEO運用代行<br>
+            span.p-top-service__subTitle SEARCH MARKETING SOLUTION
+          a(href="").p-top-service__item
+            span.p-top-service__title 広告運用代行<br>
+            span.p-top-service__subTitle AD MARKETING SOLUTION
+          a(href="").p-top-service__item
+            span.p-top-service__title WEBサイト制作・開発<br>
+            span.p-top-service__subTitle CREATIVE & SYSTEM SOLUTION
+          a(href="").p-top-service__item
+            span.p-top-service__title WEB診断・改善支援<br>
+            span.p-top-service__subTitle ANALYTICS SOLUTION
+  section.p-top-company 
+    .inner 
+      .p-top-company__wrap 
+        .p-top-company__left
+          h2.c-section-title.title-black
+            .c-section-title__en COMPANY
+            .c-section-title__jp 企業情報
+        .p-top-company__right
+          a.p-top-company__block 
+            .p-top-company__img
+              img(src="../images/top/top-company-01.png", alt="")
+            .p-top-company__textarea 
+              h3.p-top-company__title 会社概要/企業理念
+              p.p-top-company__text テストテストテステストテストテストテストテ
+          a.p-top-company__block
+            .p-top-company__img
+              img(src="../images/top/top-company-02.png", alt="")
+            .p-top-company__textarea 
+              h3.p-top-company__title 役員紹介
+              p.p-top-company__text テストテストテステストテストテストテストテ
+          a.p-top-company__block 
+            .p-top-company__img
+              img(src="../images/top/top-company-03.png", alt="")
+            .p-top-company__textarea 
+              h3.p-top-company__title 採用情報
+              p.p-top-company__text テストテストテステストテストテストテストテ

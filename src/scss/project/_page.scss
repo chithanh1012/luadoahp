@@ -1,0 +1,45 @@
+@use 'mixins/responsive';
+@use 'variables/design';
+
+.p-page-fv {
+  height: 527px;
+  position: relative;
+  z-index: 3;
+
+  &::before {
+    background-image: url(../../../images/pages/page-service-fv.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    height: 408px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 80%;
+    z-index: 2;
+  }
+
+  &::after {
+    background-color: #2f2d2c;
+    content: '';
+
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+    z-index: 1;
+  }
+  .c-page-title {
+    position: absolute;
+    right: 14%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+}
+
+.p-page-service-content {
+  @include responsive.size(margin-top, 60, 120);
+}

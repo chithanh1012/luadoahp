@@ -1,0 +1,39 @@
+@use 'mixins/responsive';
+@use 'variables/design';
+
+// =============================================
+// Base
+// =============================================
+html {
+  font-family: design.$base-font-family;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+
+  text-size-adjust: 100%;
+  @media screen and (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-size: design.$base-font-size;
+  line-height: design.$base-line-height;
+}
+
+a {
+  color: design.$base-link-color;
+  cursor: pointer;
+  text-decoration: underline;
+  touch-action: manipulation;
+  transition: opacity 0.35s;
+
+  img {
+    border: none;
+  }
+}
+
+button,
+input[type='button'] {
+  touch-action: manipulation;
+}

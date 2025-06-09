@@ -1,0 +1,22 @@
+@use 'mixins/responsive';
+
+// =============================================
+// inner
+// =============================================
+%Inner {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.inner {
+  @extend %Inner;
+  max-width: 1240px;
+}
+
+.inner--small {
+  @extend %Inner;
+  max-width: 1040px;
+}

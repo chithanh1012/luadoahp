@@ -1,0 +1,123 @@
+@use 'mixins/responsive';
+@use 'variables/design';
+
+footer {
+  background-color: #333;
+  position: relative;
+  z-index: 2;
+}
+
+.footer__wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include responsive.size(margin-top, 50, 100);
+  @include responsive.size(margin-bottom, 50, 100);
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.footer__logo {
+  @media screen and (max-width: 900px) {
+    text-align: center;
+  }
+  img {
+    height: auto;
+    max-width: 220px;
+    width: 100%;
+  }
+
+  .footer__copyright {
+    color: #fff;
+    font-weight: 400;
+    @include responsive.rfs(14, 12);
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+}
+
+.footer__copyrightSP {
+  color: #fff;
+  display: none;
+  font-weight: 400;
+  text-align: center;
+  @include responsive.rfs(14, 12);
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+}
+
+.footer__menu {
+  @media screen and (max-width: 900px) {
+    column-gap: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    max-width: 600px;
+  }
+  column-gap: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.footer__menuBlock {
+  a {
+    text-decoration: none;
+  }
+}
+
+.footer__menuTtl {
+  display: flex;
+  flex-direction: column;
+  font-family: design.$base-font-family-en;
+  font-weight: bold;
+  @include responsive.rfs(25, 20);
+}
+
+.footer__menuSubttl {
+  color: #cccccc;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer__menuList {
+  display: flex;
+  flex-direction: column;
+  @include responsive.size(margin-top, 20, 33);
+
+  a {
+    @include responsive.rfs(16, 14);
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+}
+
+.footer__pagetop {
+  align-items: center;
+  background-color: #484c55;
+  border-radius: 50px;
+  bottom: 25px;
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  position: fixed;
+  right: 40px;
+  width: 70px;
+  z-index: 9;
+  img {
+    height: auto;
+    width: 20px;
+  }
+
+  @include responsive.sp {
+    height: 60px;
+    right: 20px;
+    width: 60px;
+  }
+}

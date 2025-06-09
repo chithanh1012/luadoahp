@@ -1,0 +1,261 @@
+@use 'mixins/responsive';
+@use 'variables/design';
+
+/* =============================================
+* Utilities
+* ============================================= */
+
+// ---------------------------
+// 表示・非表示
+// h-sp/v-pc -> PCでのみ表示
+// v-sp/h-pc -> SPでのみ表示
+// ※hide-sp/view-spの略
+// ---------------------------
+@include responsive.pc {
+  .h-pc,
+  .v-sp,
+  .v-tablet,
+  .v-sp-tablet {
+    display: none !important;
+  }
+}
+
+@include responsive.sp {
+  .h-sp,
+  .v-pc,
+  .v-tablet,
+  .v-tablet-pc {
+    display: none !important;
+  }
+}
+
+@include responsive.tablet {
+  .h-tablet,
+  .v-sp,
+  .v-pc {
+    display: none !important;
+  }
+}
+
+@include responsive.tablet-pc {
+  .h-tablet-pc {
+    display: none !important;
+  }
+}
+
+@include responsive.sp-tablet {
+  .h-sp-tablet {
+    display: none !important;
+  }
+}
+
+// ---------------------------
+// 汎用スタイル
+// ---------------------------
+
+// ---- position
+.pos-absolute {
+  position: absolute !important;
+}
+.pos-relative {
+  position: relative !important;
+}
+.pos-static {
+  position: static !important;
+}
+
+// ---- display
+.d-block {
+  display: block !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+// ---------------------------
+// テキスト系スタイル
+// ---------------------------
+
+.text-indent {
+  margin-left: 1em;
+  text-indent: -1em;
+}
+
+// ---- text-align
+.text-center {
+  text-align: center !important;
+}
+
+.text-start {
+  text-align: left !important;
+}
+
+.text-end {
+  text-align: right !important;
+}
+
+// ---- font-weight
+.fw-bold {
+  font-weight: bold !important;
+}
+
+.fw-normal {
+  font-weight: normal !important;
+}
+
+.fw-100 {
+  font-weight: 100 !important;
+}
+.fw-200 {
+  font-weight: 200 !important;
+}
+.fw-300 {
+  font-weight: 300 !important;
+}
+.fw-400 {
+  font-weight: 400 !important;
+}
+.fw-500 {
+  font-weight: 500 !important;
+}
+.fw-600 {
+  font-weight: 600 !important;
+}
+.fw-700 {
+  font-weight: 700 !important;
+}
+.fw-800 {
+  font-weight: 800 !important;
+}
+.fw-900 {
+  font-weight: 900 !important;
+}
+
+// ---- font-family
+// .ff-serif {
+//   font-family: design.$font-family-serif !important;
+// }
+
+// .ff-sans-serif {
+//   font-family: design.$font-family-sans-serif !important;
+// }
+
+// ---- text-decoration
+.td-none {
+  text-decoration: none !important;
+}
+
+.td-underline {
+  text-decoration: underline !important;
+}
+
+// ---- line-height
+.lh-1 {
+  line-height: 1 !important;
+}
+.lh-11 {
+  line-height: 1.1 !important;
+}
+.lh-12 {
+  line-height: 1.2 !important;
+}
+.lh-13 {
+  line-height: 1.3 !important;
+}
+.lh-14 {
+  line-height: 1.4 !important;
+}
+.lh-16 {
+  line-height: 1.6 !important;
+}
+.lh-17 {
+  line-height: 1.7 !important;
+}
+.lh-18 {
+  line-height: 1.8 !important;
+}
+.lh-19 {
+  line-height: 1.9 !important;
+}
+.lh-20 {
+  line-height: 2 !important;
+}
+
+// ---- テキストサイズ
+@for $i from 10 through 30 {
+  $m: calc($i / 10);
+  .fs-#{$i} {
+    font-size: #{$m}rem !important;
+  }
+  @include responsive.pc {
+    .fs-pc-#{$i} {
+      font-size: #{$m}rem !important;
+    }
+  }
+  @include responsive.sp {
+    .fs-sp-#{$i} {
+      font-size: #{$m}rem !important;
+    }
+  }
+  .rfs-#{$i} {
+    @include responsive.rfs($i, $i);
+  }
+}
+
+@for $i from 0 through 20 {
+  $m: $i * 5;
+  $unit: 'px';
+  @if $i == 0 {
+    $unit: '';
+  }
+
+  .mt-#{$m} {
+    margin-top: #{$m}#{$unit} !important;
+  }
+  .mb-#{$m} {
+    margin-bottom: #{$m}#{$unit} !important;
+  }
+  .ml-#{$m} {
+    margin-left: #{$m}#{$unit} !important;
+  }
+  .mr-#{$m} {
+    margin-right: #{$m}#{$unit} !important;
+  }
+  @include responsive.pc {
+    .mt-pc-#{$m} {
+      margin-top: #{$m}#{$unit} !important;
+    }
+    .mb-pc-#{$m} {
+      margin-bottom: #{$m}#{$unit} !important;
+    }
+    .ml-pc-#{$m} {
+      margin-left: #{$m}#{$unit} !important;
+    }
+    .mr-pc-#{$m} {
+      margin-right: #{$m}#{$unit} !important;
+    }
+  }
+  @include responsive.sp {
+    .mt-sp-#{$m} {
+      margin-top: #{$m}#{$unit} !important;
+    }
+    .mb-sp-#{$m} {
+      margin-bottom: #{$m}#{$unit} !important;
+    }
+    .ml-sp-#{$m} {
+      margin-left: #{$m}#{$unit} !important;
+    }
+    .mr-sp-#{$m} {
+      margin-right: #{$m}#{$unit} !important;
+    }
+  }
+}

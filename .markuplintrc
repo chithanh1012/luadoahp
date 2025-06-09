@@ -1,0 +1,105 @@
+{
+  "parser": {
+    "\\.pug$": "@markuplint/pug-parser"
+  },
+  "excludeFiles": [
+    "./node_modules/**",
+    "./dist/**"
+  ],
+  "rules": {
+    "attr-duplication": true,
+    "character-reference": true,
+    "deprecated-attr": true,
+    "deprecated-element": true,
+    "doctype": true,
+    "id-duplication": true,
+    "permitted-contents": true,
+    "required-attr": true,
+    "invalid-attr": true,
+    "landmark-roles": true,
+    "required-h1": false,
+    "wai-aria": true,
+    "class-naming": false,
+    "attr-equal-space-after": "never-single-line",
+    "attr-equal-space-before": "never-single-line",
+    "attr-spacing": false,
+    "attr-value-quotes": true,
+    "case-sensitive-attr-name": true,
+    "case-sensitive-tag-name": true,
+    "indentation": false
+  },
+  "nodeRules": [
+    {
+      "selector": "head[prefix]",
+      "rules": {
+        "invalid-attr": {
+          "option": {
+            "attrs": {
+              "prefix": {
+                "type": "NoEmptyAny"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "selector": "meta",
+      "rules": {
+        "required-attr": false,
+        "invalid-attr": {
+          "option": {
+            "attrs": {
+              "property": {"type": "NoEmptyAny"},
+              "content": {"type": "NoEmptyAny"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "selector": "meta[property='og:url'],meta[property='og:image']",
+      "rules": {
+        "invalid-attr": {
+          "option": {
+            "attrs": {
+              "property": {"type": "NoEmptyAny"},
+              "content": {
+                "type": "HTTPSchemaURL"
+              }
+            }
+          },
+          "reason": "http(s)://から記述してください"
+        }
+      }
+    },
+    {
+      "selector": "meta[property='og:title'],meta[property='og:description']",
+      "rules": {
+        "invalid-attr": {
+          "option": {
+            "attrs": {
+              "property": {"type": "NoEmptyAny"},
+              "content": {"type": "NoEmptyAny"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "selector": "link[rel='canonical']",
+      "rules": {
+        "invalid-attr": {
+          "option": {
+            "attrs": {
+              "href": {
+                "type": "HTTPSchemaURL"
+              }
+            }
+          },
+          "reason": "http(s)://から記述してください"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+//-
+  options
+    path: 'ファイルパス',
+    pc: 'PCファイル名(拡張子あり)',
+    sp: 'SPファイル名(拡張子あり)',
+    alt: 'alt内容(オプション)',
+    media: 切り替える画面サイズ(オプション)
+
+mixin picture(options)
+  - options = options || {};
+  picture&attributes(attributes)
+    source(
+      media="(min-width:" + (options.media || 960) + "px)"
+      srcset=`${options.path}${options.pc}`
+    )
+    img(src=`${options.path}${options.sp}` alt=(options.alt || ''))

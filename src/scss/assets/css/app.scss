@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+// note: webpackを使わない場合
+// dart-sassに`--loadpath`(CLI)もしくは`includePaths`(JS API)で"src/scss"にパスを通してください
+
+// components
+@use 'components/reset';
+@use 'components/base';
+@use 'components/breadcrumb';
+@use 'components/inner';
+@use 'components/header';
+@use 'components/footer';
+@use 'components/utilities';
+@use 'components/btn';
+@use 'components/section-title';
+@use 'components/page-title';
+
+// layouts
+@use 'layouts/default';
+
+// project
+@use 'project/top';
+@use 'project/page';

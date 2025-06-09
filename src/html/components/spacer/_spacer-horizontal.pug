@@ -1,0 +1,3 @@
+mixin spacer-horizontal(size)
+  - const _size = /^\d+$/.test(size) ? size + 'px' : size
+  div(style=`display:inline-block; visibility:hidden; width:${_size}; height:0;`)&attributes(attributes)

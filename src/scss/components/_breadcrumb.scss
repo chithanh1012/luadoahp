@@ -1,0 +1,64 @@
+@use 'mixins/responsive';
+@use 'variables/design';
+
+.breadcrumb {
+  display: flex;
+  font-size: 14px;
+  list-style: none;
+  overflow-x: auto;
+  padding-left: 40px;
+  position: absolute;
+  right: 0;
+  top: 87%;
+  white-space: nowrap;
+  width: 80%;
+  z-index: 4;
+
+  ol {
+    margin: 0 !important;
+    overflow-x: auto;
+    padding-left: 0;
+    white-space: nowrap;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  li {
+    color: #fff;
+    display: inline-block;
+    margin-right: 8px;
+    padding-right: calc(16px + 8px);
+    position: relative;
+    &::before {
+      color: inherit;
+      color: #fff;
+      content: '＞';
+      font-size: 1em;
+      height: 1em;
+      line-height: 1;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 1em;
+    }
+    &:last-child {
+      color: #fff;
+      margin-right: 0;
+      padding-right: 0;
+      &::before {
+        content: normal;
+      }
+    }
+  }
+
+  &.multiline-ellipsis {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* ← 表示行数を指定 */
+    overflow: hidden;
+  }
+}

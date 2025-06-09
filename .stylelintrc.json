@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-prettier/recommended"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      true,
+      {
+        "printWidth": 80,
+        "bracketSpacing": true
+      }
+    ],
+    "order/order": [
+      "custom-properties"
+    ],
+    "string-quotes": "single",
+    "at-rule-no-unknown": null,
+    "order/properties-alphabetical-order": true,
+    "block-no-empty": null,
+    "scss/at-rule-no-unknown": true,
+    "scss/at-if-no-null": null,
+    "block-closing-brace-newline-before": "always-multi-line",
+    "block-closing-brace-space-before": "always-single-line",
+    "block-opening-brace-space-after": "always-single-line",
+    "block-opening-brace-space-before": "always-single-line",
+    "block-opening-brace-newline-after": "always-multi-line"
+  },
+  "ignoreFiles": [
+    "dist/assets/**/*.css",
+    "dist/**/*.min.css",
+    "dist/**/lib/*.css",
+    "src/static/etc/**/*.css"
+  ]
+}

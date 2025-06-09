@@ -1,0 +1,64 @@
+mixin header()
+  .header
+    .headerPC
+      .headerPC__wrap 
+        h1.headerPC__left
+          a(href="") 
+            img(src="../images/common/logo.png", alt="株式会社LUDOAロゴ")
+        .headerPC__right 
+          .headerPC__nav 
+            .headerPC__bl 
+              a.headerPC__link(href="") 事業内容
+            .headerPC__bl 
+              a.headerPC__link(href="") 企業情報
+            .headerPC__bl 
+              a.headerPC__link(href="") ニュース
+            .headerPC__bl 
+              a.headerPC__link(href="") 採用情報
+            .headerPC__bl 
+              a.headerPC__link(href="") お問合わせ
+    .headerSP 
+      .headerSP__wrap 
+        h1.headerSP__left
+          a(href="") 
+            img(src="../images/common/logo.png", alt="株式会社LUDOAロゴ")
+        .headerSP__right 
+          div#hamburger.hamburger
+            div.hamburger__menu
+              span
+              span
+              span
+          .nav__menu
+            ul.nav__list
+              li.nav__item
+                a.nav__link(href="google") トップ
+              li.nav__item(data-toggle)
+                a.nav__link(href="#") 事業内容
+                ul.nav__sublist
+                  li.nav__subitem
+                    a(href="/seo") ・WEB集客コンサルティング
+                  li.nav__subitem
+                    a(href="/ads") ・SEO運用代行
+                  li.nav__subitem
+                    a(href="/web") ・広告運用代行
+                  li.nav__subitem
+                    a(href="/web") ・WEBサイト制作
+                  li.nav__subitem
+                    a(href="/web") ・WEBサイト診断・改善支援
+                  li.nav__subitem
+                    a(href="/web") ・システム・開発
+                  li.nav__subitem
+                    a(href="/web") ・Notion導入支援
+              li.nav__item(data-toggle)
+                a.nav__link(href="#") 企業情報
+                ul.nav__sublist
+                  li.nav__subitem
+                    a(href="/seo") ・企業理念 / 会社概要
+                  li.nav__subitem
+                    a(href="/ads") ・役員紹介
+                  li.nav__subitem
+                    a(href="/web") ・採用情報
+              li.nav__item
+                a.nav__link(href="#") お問い合わせ
+              li.nav__item
+                a.nav__link(href="#") ニュース

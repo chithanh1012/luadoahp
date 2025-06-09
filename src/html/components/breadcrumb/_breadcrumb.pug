@@ -1,0 +1,8 @@
+mixin breadcrumb(breadcrumbList)
+  ul.breadcrumb
+    each item in breadcrumbList
+      if item.url
+        li
+          a(href=`${item.url}`) !{item.label}
+      else
+        li !{item.label}

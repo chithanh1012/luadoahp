@@ -1,0 +1,3 @@
+mixin spacer(size)
+  - const _size = /^\d+$/.test(size) ? size + 'px' : size
+  div(style=`display:block; visibility:hidden; width:${_size}; height:${_size};`)&attributes(attributes)

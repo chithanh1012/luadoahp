@@ -1,0 +1,9 @@
+// mixins for browser compatibility
+@mixin ie11 {
+  @media all and (-ms-high-contrast: none) {
+    *::-ms-backdrop,
+    & {
+      @content;
+    }
+  }
+}
