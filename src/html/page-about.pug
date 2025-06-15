@@ -1,0 +1,106 @@
+extends /layout/_default.pug
+include /components/_components.pug
+
+//- meta関係は変数を上書きします
+//- 指定しない場合、_config.pug の内容が反映されます。
+//- metaが足りない場合、個別対応ならheadブロックに記載、共通なら_common_head.pugに追記してください
+block variable
+  - page_title = 'インデックスページ'
+  - description = 'indexページの概要文が入ります'
+  - canonical = '';
+  - og_description = "og:descriptionに入れる内容。省略時はdescriptionが入ります";
+  - og_url = "";
+  - og_image = "";
+  - twitter_card = "summary_large_image";
+//- headの最後に入れるもの(追加のmetaやCSS,gtm等のheadに置くJS等)
+block head
+
+//- bodyの最後に入れるもの
+block script
+
+//- メインエリアに入れるもの
+block content
+  section.p-page-fv
+    h2.c-page-title.title-white
+      .c-page-title__en COMPANY OVERVIEW
+      .c-page-title__jp 企業理念 ／ 会社概要
+    nav.breadcrumb.multiline-ellipsis
+      ol 
+        li 
+          a(href="/") TOP 
+        li 
+          a(href="/") 企業情報 
+        li 
+          a(href="/") 企業理念 ／ 会社概要
+  section.mt_30
+    .inner
+      h2.c-section-title.title-black
+        .c-section-title__en PHILOSOPHY
+        .c-section-title__jp 企業理念
+      .mission.mt_15.box_a
+        .h2.text_bold.text_15 MISSION 
+        span 
+          |データと創造力で、企業と顧客の“つながり”を最大化する。
+          br
+          |・テクノロジーとマーケティングの力で顧客体験を磨き、クライアントの成長に直結する成果を創出します。
+          br
+          |・施策のすべてに測定可能な指標を設定し、確かな数字で価値を証明します。
+      .mission.mt_15.box_a
+        .h2.text_bold.text_15 VISION 
+        span 
+          |「クライアントの最強のパートナーとなり、デジタル戦略で競合に勝ち続ける力をともに育む。」
+          br
+          |私たちは、施策の立案から実行・改善までワンチームで並走し、常に競合を上回る成果を目指すことで、クライアントの事業成長を加速させます。
+      .mission.mt_15.box_a
+        .h2.text_bold.text_15 VALUE 
+        ol 
+          li 
+            |結果にこだわる
+            br
+            |私たちは常にクライアントの目標達成を最優先し、設定したKPIを共有・可視化しながら、数字で成果を示します。
+          li 
+            |データで語り、洞察で動く
+            br
+            |感覚に頼らず、複数のデータソースを横断的に分析して仮説を検証し、次の一手を裏付けのある行動に変えます。
+          li 
+            |パートナーとして共創する
+            br
+            |クライアントを“発注者”ではなく“共創パートナー”と位置付け、施策の立案から検証までを並走し、学びと成果を共有します。
+          li 
+            |俊敏に試し、すばやく学ぶ
+            br
+            |小さく試し、素早く学び、環境の変化をいち早くチャンスに変える俊敏さを持ち続けます。
+          li 
+            |進化を止めない
+            br
+            |新しい知識・技術・思考を貪欲に吸収し、自社とクライアント双方の可能性を広げ続けます。変化を歓迎し、常に次のベストプラクティスを模索します。
+      
+      section.mt_50
+        h2.c-section-title.title-black
+          .c-section-title__en OVERVIEW
+          .c-section-title__jp 会社概要
+
+        .company-info.p_40
+          .company-info_item 
+            .col-title.w50p 会社名
+            .col-content.w50p 株式会社LUDOA
+          .company-info_item 
+            .col-title.w50p 設立
+            .col-content.w50p 2025年7月1日
+          .company-info_item 
+            .col-title.w50p 所在地
+            .col-content.w50p テストテストテストテスト
+          .company-info_item 
+            .col-title.w50p 事業内容
+            .col-content.w50p 
+              |Webマーケティング事業
+              br
+              |Webサイトの企画、制作事業
+              br
+              |コンサルティング業
+              br
+              |Notionの導入・活用コンサルティング業務
+          .company-info_item 
+            .col-title.w50p 法人番号
+            .col-content.w50p 0000000000000（国税庁, 経済産業省）
+          

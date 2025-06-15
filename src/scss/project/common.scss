@@ -1,0 +1,372 @@
+@use 'mixins/responsive';
+
+$unit2: 2px;
+$unit4: 4px;
+
+/* Grid */
+$gridCols: ();
+.grid {
+  --cols: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+
+  &_cols {
+    @for $i from 1 through 4 {
+      &_#{$i} {
+        --cols: #{$i};
+      }
+    }
+  }
+  @include responsive.sp {
+    &_mb {
+      --cols: 1;
+      display: grid;
+      grid-template-columns: repeat(var(--cols), 1fr);
+
+      &_cols {
+        @for $i from 1 through 4 {
+          &_#{$i} {
+            --cols: #{$i};
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Flex */
+$flexAttr: (
+  'col': (
+    flex-direction: column,
+  ),
+  'row': (
+    flex-direction: row,
+  ),
+  'center': (
+    justify-content: center,
+  ),
+  'between': (
+    justify-content: space-between,
+  ),
+  'middle': (
+    align-items: center,
+  ),
+  'bottom': (
+    align-items: flex-end,
+  ),
+  'wrap': (
+    flex-wrap: wrap,
+  ),
+  'nowrap': (
+    flex-wrap: nowrap,
+  ),
+  '1': (
+    flex: 1,
+  ),
+);
+.flex {
+  display: flex;
+
+  @each $name, $attr in $flexAttr {
+    &_#{$name} {
+      @each $prop, $value in $attr {
+        #{$prop}: #{$value};
+      }
+    }
+  }
+
+  @include responsive.sp {
+    &_mb {
+      display: flex;
+
+      @each $name, $attr in $flexAttr {
+        &_#{$name} {
+          @each $prop, $value in $attr {
+            #{$prop}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Gap */
+$gap: (
+  '0': gap,
+  'col': column-gap,
+  'row': row-gap,
+);
+.gap {
+  @each $type, $name in $gap {
+    @for $i from 0 through 30 {
+      @if $type == '0' {
+        &_#{$i} {
+          #{$name}: $unit4 * $i;
+        }
+      } @else {
+        &_#{$type}_#{$i} {
+          #{$name}: $unit4 * $i;
+        }
+      }
+    }
+  }
+
+  @include responsive.sp {
+    &_mb {
+      @each $type, $name in $gap {
+        @for $i from 0 through 20 {
+          @if $type == '0' {
+            &_#{$i} {
+              #{$name}: $unit4 * $i;
+            }
+          } @else {
+            &_#{$type}_#{$i} {
+              #{$name}: $unit4 * $i;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Width */
+$width: (
+  'full': (
+    width: 100%,
+  ),
+);
+.w {
+  @each $name, $attr in $width {
+    &_#{$name} {
+      @each $prop, $value in $attr {
+        #{$prop}: #{$value};
+      }
+    }
+  }
+}
+
+/* Padding */
+$paddingSizes: (
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  20,
+  25,
+  30,
+  40,
+  50
+);
+$paddingTypes: (
+  '0': padding,
+  't': padding-top,
+  'r': padding-right,
+  'b': padding-bottom,
+  'l': padding-left,
+);
+.p {
+  @each $type, $prop in $paddingTypes {
+    @each $size in $paddingSizes {
+      @if $type == '0' {
+        &_#{$size} {
+          #{$prop}: $unit2 * $size;
+        }
+      } @else {
+        &#{$type}_#{$size} {
+          #{$prop}: $unit2 * $size;
+        }
+      }
+    }
+  }
+
+  @include responsive.sp {
+    @each $type, $prop in $paddingTypes {
+      @each $size in $paddingSizes {
+        @if $type == '0' {
+          &_mb_#{$size} {
+            #{$prop}: $unit2 * $size;
+          }
+        } @else {
+          &#{$type}_mb_#{$size} {
+            #{$prop}: $unit2 * $size;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Margin */
+$marginSizes: (
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  20,
+  25,
+  30,
+  40,
+  50
+);
+$marginTypes: (
+  '0': margin,
+  't': margin-top,
+  'r': margin-right,
+  'b': margin-bottom,
+  'l': margin-left,
+);
+.m {
+  @each $type, $prop in $marginTypes {
+    @each $size in $marginSizes {
+      @if $type == '0' {
+        &_#{$size} {
+          #{$prop}: $unit2 * $size;
+        }
+      } @else {
+        &#{$type}_#{$size} {
+          #{$prop}: $unit2 * $size;
+        }
+      }
+    }
+  }
+
+  @include responsive.sp {
+    @each $type, $prop in $marginTypes {
+      @each $size in $marginSizes {
+        @if $type == '0' {
+          &_mb_#{$size} {
+            #{$prop}: $unit2 * $size;
+          }
+        } @else {
+          &#{$type}_mb_#{$size} {
+            #{$prop}: $unit2 * $size;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Radius */
+$rounded: (
+  '3': 3px,
+  '5': 5px,
+  '10': 10px,
+  'circle': 50%,
+  'pill': 500px,
+);
+.rounded {
+  @each $name, $value in $rounded {
+    &_#{$name} {
+      border-radius: #{$value};
+    }
+  }
+}
+
+/* Text */
+$fontSizes: (4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 25);
+$text: (
+  'center': (
+    text-align: center,
+  ),
+  'white': (
+    color: white,
+  ),
+  'black': (
+    color: black,
+  ),
+  'gray': (
+    color: #898989,
+  ),
+  'bold': (
+    font-weight: bold,
+  ),
+);
+.text {
+  @each $size in $fontSizes {
+    &_#{$size} {
+      font-size: $unit2 * $size;
+    }
+  }
+
+  @each $type, $props in $text {
+    @each $attr, $value in $props {
+      &_#{$type} {
+        #{$attr}: #{$value};
+      }
+    }
+  }
+
+  @include responsive.sp {
+    &_mb {
+      @each $size in $fontSizes {
+        &_#{$size} {
+          font-size: $unit2 * $size;
+        }
+      }
+
+      @each $type, $props in $text {
+        @each $attr, $value in $props {
+          &_#{$type} {
+            #{$attr}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+.dShadow-a {
+  filter: drop-shadow(-1px 6px 4px #a6a6a6);
+}
+
+.box_a {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 26px;
+}
+.w50p {
+  width: 50%;
+  @include responsive.sp {
+    width: 100%;
+  }
+}
+
+.company-info_item {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  padding: 16px 0;
+  @include responsive.sp {
+    flex-direction: column;
+  }
+}
+
+.company-info_item:first-child {
+  border-top: 1px solid #ccc;
+}

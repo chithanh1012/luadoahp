@@ -1,0 +1,67 @@
+extends /layout/_default.pug
+include /components/_components.pug
+
+//- meta関係は変数を上書きします
+//- 指定しない場合、_config.pug の内容が反映されます。
+//- metaが足りない場合、個別対応ならheadブロックに記載、共通なら_common_head.pugに追記してください
+block variable
+  - page_title = 'インデックスページ'
+  - description = 'indexページの概要文が入ります'
+  - canonical = '';
+  - og_description = "og:descriptionに入れる内容。省略時はdescriptionが入ります";
+  - og_url = "";
+  - og_image = "";
+  - twitter_card = "summary_large_image";
+//- headの最後に入れるもの(追加のmetaやCSS,gtm等のheadに置くJS等)
+block head
+
+//- bodyの最後に入れるもの
+block script
+
+//- メインエリアに入れるもの
+block content
+  section.p-page-fv
+    h2.c-page-title.title-white
+      .c-page-title__en NEWS
+      .c-page-title__jp お知らせ
+    nav.breadcrumb.multiline-ellipsis
+      ol 
+        li 
+          a(href="/") TOP 
+        li 
+          a(href="/") お知らせ 
+  section.p-page-news-content 
+    .inner.page-news 
+      .p-top-news__item 
+        a(href="").p-top-news__link
+          .p-top-news__column
+            .p-top-news__columnLeft
+              .p-top-news__day 2025.00.00
+              .p-top-news__category NEWS
+            .p-top-news__columnRight
+              .p-top-news__title テストテストテストテストテストテスト
+      .p-top-news__item 
+        a(href="").p-top-news__link
+          .p-top-news__column
+            .p-top-news__columnLeft
+              .p-top-news__day 2025.00.00
+              .p-top-news__category CUSTOMER
+            .p-top-news__columnRight
+              .p-top-news__title テストテストテストテストテストテスト
+      .p-top-news__item 
+        a(href="").p-top-news__link
+          .p-top-news__column
+            .p-top-news__columnLeft
+              .p-top-news__day 2025.00.00
+              .p-top-news__category CUSTOMER
+            .p-top-news__columnRight
+              .p-top-news__title テストテストテストテストテストテスト
+      .p-top-news__item 
+        a(href="").p-top-news__link
+          .p-top-news__column
+            .p-top-news__columnLeft
+              .p-top-news__day 2025.00.00
+              .p-top-news__category CUSTOMER
+            .p-top-news__columnRight
+              .p-top-news__title テストテストテストテストテストテスト
+        
