@@ -1,0 +1,51 @@
+extends /layout/_default.pug
+include /components/_components.pug
+
+//- meta関係は変数を上書きします
+//- 指定しない場合、_config.pug の内容が反映されます。
+//- metaが足りない場合、個別対応ならheadブロックに記載、共通なら_common_head.pugに追記してください
+block variable
+  - page_title = 'インデックスページ'
+  - description = 'indexページの概要文が入ります'
+  - canonical = '';
+  - og_description = "og:descriptionに入れる内容。省略時はdescriptionが入ります";
+  - og_url = "";
+  - og_image = "";
+  - twitter_card = "summary_large_image";
+//- headの最後に入れるもの(追加のmetaやCSS,gtm等のheadに置くJS等)
+block head
+
+//- bodyの最後に入れるもの
+block script
+
+//- メインエリアに入れるもの
+block content
+  section.p-page-fv
+    h2.c-page-title.title-white
+      .c-page-title__en RECRUIT
+      .c-page-title__jp 採用情報
+    nav.breadcrumb.multiline-ellipsis
+      ol 
+        li 
+          a(href="/") TOP 
+        li 
+          a(href="/") 企業情報 
+        li 
+          a(href="/") 採用情報
+  section.mt_30
+    .inner
+      h2.c-section-title.title-black
+        .c-section-title__en DETAILS
+        .c-section-title__jp 募集内容
+      .recruits.mt_15.text_center
+        .recruit-content.mb_50
+          .content
+            |現在、正社員の募集は行っておりません。
+            br
+            |業務委託やフリーランスの方は、内容に応じてご相談可能です。
+            br
+            |ご興味のある方は、お問い合わせよりご連絡ください。
+        
+          .c-btn-black.p-top-feature__btn
+            a(href="").c-btn-black__link お問い合わせはこちら
+          
