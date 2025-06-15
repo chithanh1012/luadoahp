@@ -370,3 +370,37 @@ $text: (
 .company-info_item:first-child {
   border-top: 1px solid #ccc;
 }
+
+.board-member-item {
+  align-items: stretch;
+  border: 1px solid #e0e0e0;
+  border-radius: 9px;
+  overflow: hidden;
+  @include responsive.sp {
+    flex-direction: column-reverse;
+  }
+}
+
+.board-intro {
+  background-color: #212229;
+  flex: 0 0 65%;
+  padding: 40px;
+  @include responsive.sp {
+    flex: 0 0 100%;
+  }
+}
+
+.board-img {
+  // Chiếm full height của div cha
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+
+  img {
+    display: block; // Bỏ khoảng trắng dưới ảnh
+    height: 100%;
+    object-fit: cover; // Giữ tỉ lệ, crop nếu cần
+    object-position: center; // Canh giữa
+    width: 100%;
+  }
+}
