@@ -346,9 +346,8 @@ $text: (
 }
 
 .box_a {
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 26px;
 }
 .w50p {
@@ -403,4 +402,115 @@ $text: (
     object-position: center; // Canh giữa
     width: 100%;
   }
+}
+
+.bg_333 {
+  background-color: #333;
+}
+
+.btn_black {
+  background-color: #333;
+  border-radius: 20px;
+  color: #fff;
+  display: inline-block; /* đảm bảo có kích thước */
+  font-weight: bold;
+  padding: 30px 75px 30px 25px;
+  position: relative;
+  text-decoration: none;
+}
+
+.btn_black.bottom_arrow::after {
+  background-image: url(../../../images/common/arrow-bottom.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+}
+
+.consulting-1 a {
+  flex: 1;
+}
+
+.steps {
+  font-family: sans-serif;
+  margin: 0 auto;
+  // max-width: 1000px;
+  width: 100%;
+}
+
+.step {
+  align-items: center;
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: border 0.3s;
+}
+
+.step-number {
+  align-items: center;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  justify-content: center;
+  margin-right: 20px;
+  min-width: 50px;
+}
+
+.step-content .title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+
+.step-content .description {
+  color: #333;
+  font-size: 15px;
+  margin: 0;
+}
+
+.plan-box {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  font-family: sans-serif;
+  margin: 20px auto;
+  overflow: hidden;
+  @include responsive.sp {
+    flex-direction: column;
+  }
+}
+
+.plan-title {
+  align-items: center;
+  background-color: #1c1c22;
+  color: #fff;
+  display: flex;
+  flex: 1;
+  font-weight: bold;
+  min-width: 200px;
+  padding: 30px 40px;
+}
+
+.plan-price {
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  flex: 1;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 30px 40px;
 }

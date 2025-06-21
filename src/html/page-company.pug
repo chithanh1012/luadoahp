@@ -1,0 +1,57 @@
+extends /layout/_default.pug
+include /components/_components.pug
+
+//- meta関係は変数を上書きします
+//- 指定しない場合、_config.pug の内容が反映されます。
+//- metaが足りない場合、個別対応ならheadブロックに記載、共通なら_common_head.pugに追記してください
+block variable
+  - page_title = 'インデックスページ'
+  - description = 'indexページの概要文が入ります'
+  - canonical = '';
+  - og_description = "og:descriptionに入れる内容。省略時はdescriptionが入ります";
+  - og_url = "";
+  - og_image = "";
+  - twitter_card = "summary_large_image";
+//- headの最後に入れるもの(追加のmetaやCSS,gtm等のheadに置くJS等)
+block head
+
+//- bodyの最後に入れるもの
+block script
+
+//- メインエリアに入れるもの
+block content
+  section.p-page-fv
+    h2.c-page-title.title-white
+      .c-page-title__en COMPANY
+      .c-page-title__jp 企業情報
+    nav.breadcrumb.multiline-ellipsis
+      ol 
+        li 
+          a(href="/") TOP 
+        li 
+          a(href="/") 企業情報 
+  section.mt_30
+    .inner
+      h2.c-section-title.title-black
+        .c-section-title__en COMPANY INFORMATION LIST
+        .c-section-title__jp 企業情報一覧
+      
+      section.main.flex 
+        a.p-top-company__block 
+          .p-top-company__img
+            img(src="../images/top/top-company-01.png", alt="")
+          .p-top-company__textarea 
+            h3.p-top-company__title 会社概要/企業理念
+            p.p-top-company__text テストテストテステストテストテストテストテ
+        a.p-top-company__block
+          .p-top-company__img
+            img(src="../images/top/top-company-02.png", alt="")
+          .p-top-company__textarea 
+            h3.p-top-company__title 役員紹介
+            p.p-top-company__text テストテストテステストテストテストテストテ
+        a.p-top-company__block 
+          .p-top-company__img
+            img(src="../images/top/top-company-03.png", alt="")
+          .p-top-company__textarea 
+            h3.p-top-company__title 採用情報
+            p.p-top-company__text テストテストテステストテストテストテストテ

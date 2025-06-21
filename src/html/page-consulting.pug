@@ -1,0 +1,191 @@
+extends /layout/_default.pug
+include /components/_components.pug
+
+//- meta関係は変数を上書きします
+//- 指定しない場合、_config.pug の内容が反映されます。
+//- metaが足りない場合、個別対応ならheadブロックに記載、共通なら_common_head.pugに追記してください
+block variable
+  - page_title = 'インデックスページ'
+  - description = 'indexページの概要文が入ります'
+  - canonical = '';
+  - og_description = "og:descriptionに入れる内容。省略時はdescriptionが入ります";
+  - og_url = "";
+  - og_image = "";
+  - twitter_card = "summary_large_image";
+//- headの最後に入れるもの(追加のmetaやCSS,gtm等のheadに置くJS等)
+block head
+
+//- bodyの最後に入れるもの
+block script
+
+//- メインエリアに入れるもの
+block content
+  section.p-page-fv
+    h2.c-page-title.title-white
+      .c-page-title__en WEB CONSULTING
+      .c-page-title__jp WEB集客コンサルティング
+    nav.breadcrumb.multiline-ellipsis
+      ol 
+        li 
+          a(href="/") TOP 
+        li 
+          a(href="/") 事業内容 
+        li 
+          a(href="/") WEB集客コンサルティング
+  section.mt_30
+    .inner
+      //- .consulting-1.flex.flex_between.gap_10
+      //-   a.btn_black.bottom_arrow.flex_middle.flex_center お問い合わせはこちら
+      //-   a.btn_black.bottom_arrow 導入事例<br>お客様の声
+      //-   a.btn_black.bottom_arrow サービスの流れ
+      //-   a.btn_black.bottom_arrow 料金・プラン
+      .button-group
+        button.dropdown-btn
+          span サービス概要
+          span.icon.arrow-down xx
+        button.dropdown-btn
+          span 導入事例
+          br
+          span お客様の声
+          span.icon.arrow-down xx
+        button.dropdown-btn
+          span サービスの流れ
+          span.icon.arrow-down xx
+        button.dropdown-btn
+          span 料金・プラン
+          span.icon.arrow-down xx
+      
+
+      h2.c-section-title.title-black.mt_30
+        .c-section-title__en SERVICE OVERVIEW
+        .c-section-title__jp WEB集客コンサルティングの概要
+      .mt_15.box_a
+        .h2.text_bold.text_15 概要タイトル概要タイトル 
+        span 
+          |「本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+          |本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+      h2.c-section-title.title-black.mt_30
+        .c-section-title__en CASE STUDY
+        .c-section-title__jp 導入事例・お客様の声
+      .p-top-customer__wrap 
+        .p-top-customer__block 
+          img(src="../images/top/customer-01.png", alt="").p-top-customer__image
+          .p-top-customer__bt
+            h3.p-top-customer__Ttl テスト株式会社<br>
+              span.p-top-customer__subTtl CV率とセッション数の向上
+            .p-top-customer__btWrap
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 成果
+                span.p-top-customer__itemContent CV率5％UP、セッション数5倍
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 業種
+                span.p-top-customer__itemContent 補助金・助成金コンサル業
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 支援内容
+                span.p-top-customer__itemContent WEBマーケティングコンサル
+        .p-top-customer__block 
+          img(src="../images/top/customer-02.png", alt="").p-top-customer__image
+          .p-top-customer__bt
+            h3.p-top-customer__Ttl テスト株式会社<br>
+              span.p-top-customer__subTtl CV率とセッション数の向上
+            .p-top-customer__btWrap
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 成果
+                span.p-top-customer__itemContent CV率5％UP、セッション数5倍
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 業種
+                span.p-top-customer__itemContent 補助金・助成金コンサル業
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 支援内容
+                span.p-top-customer__itemContent WEBマーケティングコンサル
+        .p-top-customer__block 
+          img(src="../images/top/customer-03.png", alt="").p-top-customer__image
+          .p-top-customer__bt
+            h3.p-top-customer__Ttl テスト株式会社<br>
+              span.p-top-customer__subTtl CV率とセッション数の向上
+            .p-top-customer__btWrap
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 成果
+                span.p-top-customer__itemContent CV率5％UP、セッション数5倍
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 業種
+                span.p-top-customer__itemContent 補助金・助成金コンサル業
+              .p-top-customer__itemWrap
+                span.p-top-customer__itemTtl 支援内容
+                span.p-top-customer__itemContent WEBマーケティングコンサル
+      h2.c-section-title.title-black.mt_30
+        .c-section-title__en SERVICE FLOW
+        .c-section-title__jp サービスの流れ
+
+      //- convert this code to Pug
+      .steps.mt_30
+        .step
+          .step-number 1
+          .step-content
+            p.title お問い合わせ・ご相談（無料）
+            p.description まずはお問い合わせフォームまたはメールにて、お気軽にご相談ください。
+        .step
+          .step-number 2
+          .step-content
+            p.title ヒアリング・現状分析
+            p.description オンラインまたは対面にて、現在の状況やご要望、課題感を詳しくお伺いします。
+        .step
+          .step-number 3
+          .step-content
+            p.title ご提案・お見積もり
+            p.description ヒアリング内容をもとに、最適な施策プランとお見積もりをご提案いたします。
+        .step
+          .step-number 4
+          .step-content
+            p.title ご契約・プロジェクト開始
+            p.description 契約締結後、具体的な進行スケジュールやタスクの整理を行い、プロジェクトを開始します。
+        .step
+          .step-number 5
+          .step-content
+            p.title 施策の実施・改善支援
+            p.description 各種施策を実行しながら、定期的な報告と改善提案を行います。進行中も、柔軟に方針の見直しや調整が可能です。
+        .step
+          .step-number 6
+          .step-content
+            p.title 成果の振り返り・継続支援
+            p.description 施策の成果を振り返り、必要に応じて新たな課題解決や継続的な支援をご提案します。
+
+      h2.c-section-title.title-black.mt_30
+        .c-section-title__en PRICES / PLAN
+        .c-section-title__jp 料金・プラン
+      section.flex.flex_col.gap_3.mb_20
+        .plan-box.w_full
+          .plan-title Aプラン
+          .plan-price 550,000円（税込）~ 月額
+        .box_a
+          |・月一回のご訪問。
+          br
+          |・お電話・メールでのご相談は何度でもOK。
+          br
+          |・自社サイトの改善からweb解析に基づく提案、SNSの活用、動画コンテンツの運用、Googleビジネスプロフィールの運用、web広告の活用など、あらゆる集客方法を検討して御社のweb集客を実務レベル提案型でサポートしていきます。
+          br
+          |・ページ制作や更新作業費用は含まれています。
+        .divider 
+        .plan-box.w_full.mt_10
+          .plan-title Bプラン
+          .plan-price 850,000円（税込） ~ 月額
+        .box_a
+          |・月一回のご訪問。
+          br
+          |・お電話・メールでのご相談は何度でもOK。
+          br
+          |・自社サイトの改善からweb解析に基づく提案、SNSの活用、動画コンテンツの運用、Googleビジネスプロフィールの運用、web広告の活用など、あらゆる集客方法を検討して御社のweb集客を実務レベル提案型でサポートしていきます。
+          br
+          |・ページ制作や更新作業費用は含まれています。
+        .divider 
+        .plan-box.w_full.mt_10
+          .plan-title Cプラン
+          .plan-price 1,050,000円（税込） ~ 月額
+        .box_a
+          |・月一回のご訪問。
+          br
+          |・お電話・メールでのご相談は何度でもOK。
+          br
+          |・自社サイトの改善からweb解析に基づく提案、SNSの活用、動画コンテンツの運用、Googleビジネスプロフィールの運用、web広告の活用など、あらゆる集客方法を検討して御社のweb集客を実務レベル提案型でサポートしていきます。
+          br
+          |・ページ制作や更新作業費用は含まれています。
