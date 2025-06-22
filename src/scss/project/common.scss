@@ -514,3 +514,40 @@ $text: (
   font-weight: bold;
   padding: 30px 40px;
 }
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.button-item {
+  align-items: center;
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  display: flex;
+  flex: 1 1 calc((100% - 90px) / 4);
+  height: 84px;
+  min-width: 220px;
+  padding-left: 50px;
+  position: relative;
+  // padding-left: 30px 75px 30px 50px;
+  text-wrap: nowrap;
+}
+.btn-arrow-below::after {
+  background-image: url(../../../images/common/arrow-bottom.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  content: '';
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+}
