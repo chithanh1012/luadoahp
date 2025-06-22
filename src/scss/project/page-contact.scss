@@ -1,0 +1,97 @@
+// SCSS riêng cho trang問い合わせ (Contact)
+.contact-section {
+  background: #f8fafc;
+  padding: 2rem 0;
+}
+
+.contact-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2rem 1.5rem;
+}
+
+.contact-form label {
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #f8fafc;
+  border: 1.5px solid #bfc6d1;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 1rem;
+  line-height: 2.5;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: #fff;
+  border-color: #333;
+  box-shadow: 0 0 0 2px #2563eb22;
+  outline: none;
+}
+
+.contact-form button {
+  align-self: flex-end;
+  background-color: #333;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px 0 rgba(51, 51, 51, 0.08);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 2.5;
+  padding: 0.8rem 2.5rem 0.8rem 1.5rem;
+  position: relative;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  width: 100px;
+}
+
+.contact-form button::after {
+  background: url('../../../images/send.svg') no-repeat center/contain;
+  content: '';
+  display: inline-block;
+  filter: brightness(0) invert(1);
+  height: 1.1em;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.1em;
+}
+
+.contact-form button:hover {
+  background-color: #222;
+  box-shadow: 0 2px 8px 0 rgba(51, 51, 51, 0.15);
+}
+
+.page-title {
+  color: #222;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.page-desc {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
