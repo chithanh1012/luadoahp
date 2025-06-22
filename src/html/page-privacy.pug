@@ -1,0 +1,37 @@
+extends /layout/_default.pug
+include /components/_components.pug
+
+//- meta関係は変数を上書きします
+//- 指定しない場合、_config.pug の内容が反映されます。
+//- metaが足りない場合、個別対応ならheadブロックに記載、共通なら_common_head.pugに追記してください
+block variable
+  - page_title = 'インデックスページ'
+  - description = 'indexページの概要文が入ります'
+  - canonical = '';
+  - og_description = "og:descriptionに入れる内容。省略時はdescriptionが入ります";
+  - og_url = "";
+  - og_image = "";
+  - twitter_card = "summary_large_image";
+//- headの最後に入れるもの(追加のmetaやCSS,gtm等のheadに置くJS等)
+block head
+
+//- bodyの最後に入れるもの
+block script
+
+//- メインエリアに入れるもの
+block content
+  section.p-page-fv
+    h2.c-page-title.title-white
+      .c-page-title__en PRIVACY POLICY
+      .c-page-title__jp プライバシーポリシー
+    nav.breadcrumb.multiline-ellipsis
+      ol 
+        li 
+          a(href="/") TOP 
+        li 
+          a(href="/") ライバシーポリシー 
+  section.p-page-news-content 
+    .inner
+      h1.news_title ライバシーポリシー 
+      .privacy-content 
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus animi enim vel consequatur perferendis doloribus itaque. Perferendis enim, amet recusandae consectetur, dolore dolores debitis mollitia incidunt aspernatur, placeat modi! Placeat autem, dolorem ipsa suscipit cumque laboriosam voluptatem iste rerum possimus delectus temporibus incidunt! Odit, modi, ab consectetur aperiam saepe nulla omnis repudiandae ipsam excepturi, commodi tenetur consequuntur atque! Recusandae sit obcaecati accusantium, consequuntur ad omnis aliquam expedita natus quo atque officia necessitatibus possimus fugit iusto! Voluptatem dolore rem tempora, vitae quaerat, asperiores possimus expedita in eaque accusamus sit voluptatibus ullam molestias obcaecati eos quo quidem illum quam magnam deleniti iusto consequatur minima ipsum. Ducimus totam excepturi mollitia quibusdam recusandae culpa. Temporibus corporis mollitia reiciendis natus doloribus nostrum repellendus porro illo similique saepe, pariatur quas sapiente, quo cupiditate, quam tenetur. Corrupti non recusandae earum fugiat rem qui, distinctio id! Officiis libero labore similique hic numquam sed amet eveniet facere suscipit, voluptatem odio a inventore neque dolor distinctio, expedita soluta tempora, doloribus blanditiis natus? Quas eveniet pariatur nam et officia hic magni iure dolor nostrum ut sed eligendi quasi repudiandae aperiam, recusandae incidunt nobis, quam, repellat voluptas atque debitis. Quos quia adipisci odit maiores eveniet. Autem iure porro, modi aliquid voluptates praesentium dignissimos quia molestias explicabo minus quas. Modi numquam sit eveniet amet qui harum recusandae? Ex magni nulla obcaecati quod et enim alias, placeat consectetur quidem nam aut fugit dignissimos temporibus? Ratione, fugit! Laboriosam deserunt laborum quis eveniet neque pariatur aperiam, blanditiis in quod id, magnam, delectus tempora. Ipsa neque nihil, inventore sunt molestias asperiores, eligendi cumque, eaque beatae excepturi temporibus! Consectetur deserunt laudantium sed repellendus aperiam perspiciatis consequuntur, ut cumque asperiores dignissimos omnis ad repellat ullam reiciendis totam dolores itaque dicta alias porro rerum aut ea dolor laboriosam eius. Molestiae, perferendis esse aspernatur perspiciatis neque maiores quod dolorum aperiam.
