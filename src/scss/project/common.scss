@@ -565,6 +565,7 @@ $text: (
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
   flex: 0 0 calc((100% - 60px) / 3);
   flex-direction: column;
   gap: 50px;
@@ -580,7 +581,7 @@ $text: (
   background-image: url(../../../images/common/btn-arrow-black.png);
   // background-position: center;
   background-size: cover;
-  bottom: 35px;
+  bottom: 20px;
   content: '';
   height: 26px;
   position: absolute;
@@ -629,7 +630,7 @@ $text: (
   border: 1px solid #82868f;
 }
 
-.inner a {
-  all: unset;
-  cursor: pointer;
-}
+// .inner a {
+//   all: unset;
+//   cursor: pointer;
+// }
