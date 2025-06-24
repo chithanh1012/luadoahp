@@ -551,3 +551,85 @@ $text: (
   transform: translateY(-50%);
   width: 40px;
 }
+
+// =====================Services list =====================
+.sv-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.sv-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex: 0 0 calc((100% - 60px) / 3);
+  flex-direction: column;
+  gap: 50px;
+  min-width: 344px;
+  overflow: hidden;
+  position: relative;
+  @include responsive.sp {
+    flex: 1 1 100%;
+  }
+}
+.sv-item::before {
+  // background-color: red;
+  background-image: url(../../../images/common/btn-arrow-black.png);
+  // background-position: center;
+  background-size: cover;
+  bottom: 35px;
+  content: '';
+  height: 26px;
+  position: absolute;
+  right: 20px;
+  transition: transform 0.3s ease;
+  width: 26px;
+}
+
+.sv-item:hover::before {
+  transform: translateX(5px);
+}
+.sv-item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.sv-item img {
+  display: block;
+  max-height: 190px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.tag {
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  padding: 3px 10px;
+  text-wrap: nowrap;
+  width: fit-content;
+}
+
+.tag-black {
+  background-color: #2f2d2c;
+  color: #fff;
+}
+
+.tag-gray {
+  background-color: #82868f;
+  color: #fff;
+}
+.tag-outline {
+  background-color: #f7f6f3;
+  border: 1px solid #82868f;
+}
+
+.inner a {
+  all: unset;
+  cursor: pointer;
+}
