@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article# website: https://ogp.me/ns/website#base fb: https://ogp.me/ns/fb#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <title>インデックスページ</title>
+    <meta name="description" content="indexページの概要文が入ります">
+    <meta property="og:title" content="インデックスページ">
+    <meta property="og:description" content="og:descriptionに入れる内容。省略時はdescriptionが入ります">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- SwiperとjQueryの読み込み -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!-- staticのCSS読み込みサンプル TODO: 実装時削除 -->
+    <link rel="stylesheet" type="text/css" href="example/etc/test.css">
+  <script defer src="assets/js/app.js?b7ca1c640a8a70c9c45e"></script><link href="assets/css/vendors.css?b7ca1c640a8a70c9c45e" rel="stylesheet"><link href="assets/css/app.css?b7ca1c640a8a70c9c45e" rel="stylesheet"></head>
+  <body class="layout-default">
+    <header class="l-header" id="pagetop">
+      <div class="header">
+        <div class="headerPC">
+          <div class="headerPC__wrap"> 
+            <h1 class="headerPC__left"><a href="/"> <img src="assets/images/common/logo.png" alt="株式会社LUDOAロゴ"></a></h1>
+            <div class="headerPC__right"> 
+              <div class="headerPC__nav"> 
+                <div class="headerPC__bl"> <a class="headerPC__link" href="/archive-service.html">事業内容</a></div>
+                <div class="headerPC__bl"> <a class="headerPC__link" href="/page-company.html">企業情報</a></div>
+                <div class="headerPC__bl"> <a class="headerPC__link" href="/archive-news.html">ニュース</a></div>
+                <div class="headerPC__bl"> <a class="headerPC__link" href="/page-recruits.html">採用情報</a></div>
+                <div class="headerPC__bl"> <a class="headerPC__link" href="/page-contact.html">お問合わせ</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="headerSP"> 
+          <div class="headerSP__wrap"> 
+            <h1 class="headerSP__left"><a href=""> <img src="assets/images/common/logo.png" alt="株式会社LUDOAロゴ"></a></h1>
+            <div class="headerSP__right"> 
+              <div class="hamburger" id="hamburger">
+                <div class="hamburger__menu"><span></span><span></span><span></span></div>
+              </div>
+              <div class="nav__menu">
+                <ul class="nav__list">
+                  <li class="nav__item"><a class="nav__link" href="google">トップ</a></li>
+                  <li class="nav__item" data-toggle><a class="nav__link" href="#">事業内容</a>
+                    <ul class="nav__sublist">
+                      <li class="nav__subitem"><a href="/seo">・WEB集客コンサルティング</a></li>
+                      <li class="nav__subitem"><a href="/ads">・SEO運用代行</a></li>
+                      <li class="nav__subitem"><a href="/web">・広告運用代行</a></li>
+                      <li class="nav__subitem"><a href="/web">・WEBサイト制作</a></li>
+                      <li class="nav__subitem"><a href="/web">・WEBサイト診断・改善支援</a></li>
+                      <li class="nav__subitem"><a href="/web">・システム・開発</a></li>
+                      <li class="nav__subitem"><a href="/web">・Notion導入支援</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav__item" data-toggle><a class="nav__link" href="#">企業情報</a>
+                    <ul class="nav__sublist">
+                      <li class="nav__subitem"><a href="/seo">・企業理念 / 会社概要</a></li>
+                      <li class="nav__subitem"><a href="/ads">・役員紹介</a></li>
+                      <li class="nav__subitem"><a href="/web">・採用情報</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav__item"><a class="nav__link" href="#">お問い合わせ</a></li>
+                  <li class="nav__item"><a class="nav__link" href="#">ニュース</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="l-main">
+      <section class="p-top-fv fv">
+        <div class="swiper" id="mainSlider">
+          <div class="swiper-wrapper p-top-fv__image"><img class="swiper-slide" src="assets/images/top/top-fv-01.png" alt=""><img class="swiper-slide" src="assets/images/top/top-fv-02.png" alt=""><img class="swiper-slide" src="assets/images/top/top-fv-03.png" alt=""></div>
+        </div>
+        <div class="fv__overlay">
+          <h2 class="p-top-fv__title">共に成果をつくる<br>マーケティング<br><span class="p-top-fv__subtitle">MARKETING PARTNER</span></h2>
+          <div class="fv__controls">
+            <div class="fv__progress">
+              <div class="fv__progress-bar"></div>
+            </div>
+            <button class="playing" id="sliderToggle">⏸︎</button>
+          </div>
+          <div class="slide-count"><span class="current-slide">01</span> / <span class="total-slides">04</span></div>
+        </div>
+        <div class="c-btn-black p-top-fv__btn"><a class="c-btn-black__link v-pc" href="">無料相談・お問合せはこちら</a></div>
+      </section>
+      <section class="p-top-feature">
+        <div class="inner"> 
+          <h2 class="c-section-title title-white">
+            <div class="c-section-title__en">FEATURE </div>
+            <div class="c-section-title__jp">弊社の特徴</div>
+          </h2>
+          <div class="p-top-feature__wrap"> 
+            <div class="p-top-feature__blcok"> <img src="assets/images/top/feature-01.png" alt="">
+              <h3 class="p-top-feature__ttl-en">Expert Assigned
+                <p class="p-top-feature__ttl-jp">対応内容ごとに<br><span>専門家が対応</span></p>
+              </h3>
+            </div>
+            <div class="p-top-feature__blcok"> <img src="assets/images/top/feature-05.png" alt="">
+              <h3 class="p-top-feature__ttl-en">In-house Talent
+                <p class="p-top-feature__ttl-jp">自社に<span>優秀な<br>エンジニア</span>が多数在籍</p>
+              </h3>
+            </div>
+            <div class="p-top-feature__blcok"> <img src="assets/images/top/feature-02.png" alt="">
+              <h3 class="p-top-feature__ttl-en">Global Dev
+                <p class="p-top-feature__ttl-jp"><span>ベトナム開発チーム<br></span>によるコスト最適化</p>
+              </h3>
+            </div>
+            <div class="p-top-feature__blcok"> <img src="assets/images/top/feature-03.png" alt="">
+              <h3 class="p-top-feature__ttl-en">Tailored Approach
+                <p class="p-top-feature__ttl-jp"><span>お客様ごとにカスタム設計<br></span>最適な手法を提案</p>
+              </h3>
+            </div>
+            <div class="p-top-feature__blcok v-pc"><img src="assets/images/top/feature-04.png" alt="">
+              <h3 class="p-top-feature__ttl-en">Strategic Partner
+                <p class="p-top-feature__ttl-jp"><span>経営目線で伴走する<br></span>スタンス</p>
+              </h3>
+            </div>
+          </div>
+          <div class="c-btn-black p-top-feature__btn"><a class="c-btn-black__link" href="">事業内容一覧を見る</a></div>
+        </div>
+      </section>
+      <section class="p-top-news"> 
+        <div class="inner"> 
+          <div class="p-top-news__wrap">
+            <div class="p-top-news__left">
+              <h2 class="c-section-title title-black">
+                <div class="c-section-title__en">NEWS</div>
+              </h2>
+            </div>
+            <div class="p-top-news__right"> 
+              <div class="p-top-news__item"> <a class="p-top-news__link" href="">
+                  <div class="p-top-news__column">
+                    <div class="p-top-news__columnLeft">
+                      <div class="p-top-news__day">2025.00.00</div>
+                      <div class="p-top-news__category">NEWS</div>
+                    </div>
+                    <div class="p-top-news__columnRight">
+                      <div class="p-top-news__title">テストテストテストテストテストテスト</div>
+                    </div>
+                  </div></a></div>
+              <div class="p-top-news__item"> <a class="p-top-news__link" href="">
+                  <div class="p-top-news__column">
+                    <div class="p-top-news__columnLeft">
+                      <div class="p-top-news__day">2025.00.00</div>
+                      <div class="p-top-news__category">CUSTOMER</div>
+                    </div>
+                    <div class="p-top-news__columnRight">
+                      <div class="p-top-news__title">テストテストテストテストテストテスト</div>
+                    </div>
+                  </div></a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="p-top-customer"> 
+        <h2 class="c-section-title title-white p-top-customer__title">
+          <div class="c-section-title__en">CUSTOMER </div>
+          <div class="c-section-title__jp">顧客満足度95%を誇る支援実績</div>
+        </h2>
+        <div class="inner"> 
+          <div class="p-top-customer__wrap"> 
+            <div class="p-top-customer__block"> <img class="p-top-customer__image" src="assets/images/top/customer-01.png" alt="">
+              <div class="p-top-customer__bt">
+                <h3 class="p-top-customer__Ttl">テスト株式会社<br><span class="p-top-customer__subTtl">CV率とセッション数の向上</span></h3>
+                <div class="p-top-customer__btWrap">
+                  <div class="p-top-customer__itemWrap"><span class="p-top-customer__itemTtl">成果</span><span class="p-top-customer__itemContent">CV率5％UP、セッション数5倍</span></div>
+                  <div class="p-top-customer__itemWrap"><span class="p-top-customer__itemTtl">業種</span><span class="p-top-customer__itemContent">補助金・助成金コンサル業</span></div>
+                  <div class="p-top-customer__itemWrap"><span class="p-top-customer__itemTtl">支援内容</span><span class="p-top-customer__itemContent">WEBマーケティングコンサル</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="p-top-customer__block"> <img class="p-top-customer__image" src="assets/images/top/customer-02.png" alt="">
+              <div class="p-top-customer__bt">
+                <h3 class="p-top-customer__Ttl">テスト株式会社<br><span class="p-top-customer__subTtl">CV率とセッション数の向上</span></h3>
+                <div class="p-top-customer__btWrap">
+                  <div class="p-top-customer__itemWrap"><span class="p-top-customer__itemTtl">成果</span><span class="p-top-customer__itemContent">CV率5％UP、セッション数5倍</span></div>
+                  <div class="p-top-customer__itemWrap"><span class="p-top-customer__itemTtl">業種</span><span class="p-top-customer__itemContent">補助金・助成金コンサル業</span></div>
+                  <div class="p-top-customer__itemWrap"><span class="p-top-customer__itemTtl">支援内容</span><span class="p-top-customer__itemContent">WEBマーケティングコンサル</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="p-top-customer__block"> <img class="p-top-customer__image" src="assets/images/top/customer-03.png" alt="">
+              <div class="p-top-customer__bt">
+                <h3 class="p-top-customer__Ttl">テスト株式会社<br><span class="p-top-customer__subTtl">CV率とセッション数の向上</span></h3>
+                <div class="p-top-customer__btWrap">
+                  <div class="p-top-customer__itemWrap"><span class="p-top-customer__itemTtl">成果</span><span class="p-top-customer__itemContent">CV率5％UP、セッション数5倍</span></div>
+                  <div class="p-top-customer__itemWrap"><span class="p-top-customer__itemTtl">業種</span><span class="p-top-customer__itemContent">補助金・助成金コンサル業</span></div>
+                  <div class="p-top-customer__itemWrap"><span class="p-top-customer__itemTtl">支援内容</span><span class="p-top-customer__itemContent">WEBマーケティングコンサル</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="p-top-service"> 
+        <div class="p-top-service__wrap"> 
+          <div class="p-top-service__left"> <img src="assets/images/top/top-service-left.png" alt=""></div>
+          <div class="p-top-service__right"> 
+            <h2 class="c-section-title title-white">
+              <div class="c-section-title__en">SERVICE </div>
+              <div class="c-section-title__jp">事業内容</div>
+            </h2>
+            <div class="p-top-service__content"> <a class="p-top-service__item" href=""><span class="p-top-service__title">WEB集客コンサルティング<br></span><span class="p-top-service__subTitle">WEB MARKETING SOLUTION</span></a><a class="p-top-service__item" href=""><span class="p-top-service__title">SEO運用代行<br></span><span class="p-top-service__subTitle">SEARCH MARKETING SOLUTION</span></a><a class="p-top-service__item" href=""><span class="p-top-service__title">広告運用代行<br></span><span class="p-top-service__subTitle">AD MARKETING SOLUTION</span></a><a class="p-top-service__item" href=""><span class="p-top-service__title">WEBサイト制作・開発<br></span><span class="p-top-service__subTitle">CREATIVE & SYSTEM SOLUTION</span></a><a class="p-top-service__item" href=""><span class="p-top-service__title">WEB診断・改善支援<br></span><span class="p-top-service__subTitle">ANALYTICS SOLUTION</span></a></div>
+          </div>
+        </div>
+      </section>
+      <section class="p-top-company"> 
+        <div class="inner"> 
+          <div class="p-top-company__wrap"> 
+            <div class="p-top-company__left">
+              <h2 class="c-section-title title-black">
+                <div class="c-section-title__en">COMPANY</div>
+                <div class="c-section-title__jp">企業情報</div>
+              </h2>
+            </div>
+            <div class="p-top-company__right"><a class="p-top-company__block"> 
+                <div class="p-top-company__img"><img src="assets/images/top/top-company-01.png" alt=""></div>
+                <div class="p-top-company__textarea"> 
+                  <h3 class="p-top-company__title">会社概要/企業理念</h3>
+                  <p class="p-top-company__text">テストテストテステストテストテストテストテ</p>
+                </div></a><a class="p-top-company__block">
+                <div class="p-top-company__img"><img src="assets/images/top/top-company-02.png" alt=""></div>
+                <div class="p-top-company__textarea"> 
+                  <h3 class="p-top-company__title">役員紹介</h3>
+                  <p class="p-top-company__text">テストテストテステストテストテストテストテ</p>
+                </div></a><a class="p-top-company__block"> 
+                <div class="p-top-company__img"><img src="assets/images/top/top-company-03.png" alt=""></div>
+                <div class="p-top-company__textarea"> 
+                  <h3 class="p-top-company__title">採用情報</h3>
+                  <p class="p-top-company__text">テストテストテステストテストテストテストテ</p>
+                </div></a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="l-footer">
+      <div class="footer">
+        <div class="inner"> 
+          <div class="footer__wrap"> 
+            <div class="footer__logo"> <a href=""> <img src="assets/images/common/logo.png" alt=""></a>
+              <p class="footer__copyright">© 2025 LUDOA inc.all rights reserved.</p>
+            </div>
+            <div class="footer__menu"> 
+              <div class="footer__menuBlock"> <a class="footer__menuTtl">Service<span class="footer__menuSubttl">事業内容</span></a>
+                <div class="footer__menuList"> <a href="">WEB集客コンサルティング</a><a href="">SEO運用代行</a><a href="">広告運用代行</a><a href="">WEBサイト制作</a><a href="">WEBサイト診断・改善支援</a><a href="">システム・開発</a><a href="">Notion導入支援</a></div>
+              </div>
+              <div class="footer__menuBlock"> <a class="footer__menuTtl">Company<span class="footer__menuSubttl">企業情報</span></a>
+                <div class="footer__menuList"> <a href="">企業理念 / 会社概要</a><a href="">役員紹介</a><a href="">採用情報</a></div>
+              </div>
+              <div class="footer__menuBlock"> <a class="footer__menuTtl">Others<span class="footer__menuSubttl">その他</span></a>
+                <div class="footer__menuList"> <a href="">お問い合わせ</a><a href="">ニュース</a><a href="">個人情報保護方針</a></div>
+              </div>
+            </div>
+          </div>
+          <p class="footer__copyrightSP">© 2025 LUDOA inc.all rights reserved.</p>
+        </div><a class="footer__pagetop" href="#pagetop"> <img src="assets/images/common/page-top-icon.png" alt="ページトップへ ボタン"></a>
+      </div>
+    </footer>
+  </body>
+</html>
