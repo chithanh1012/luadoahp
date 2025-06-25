@@ -27,9 +27,11 @@ const header = function () {
   $(function () {
     const $header = $('.header')
     const fvHeight = $('.p-top-fv').outerHeight() // FVの高さを取得
+    const pvHeight = $('.p-page-fv').outerHeight() // FVの高さを取得
+    console.log(`fvHeight: ${fvHeight}, pvHeight: ${pvHeight}`)
 
     $(window).on('scroll', function () {
-      if ($(this).scrollTop() > fvHeight) {
+      if ($(this).scrollTop() > fvHeight || $(this).scrollTop() > pvHeight) {
         $header.addClass('scrolled')
       } else {
         $header.removeClass('scrolled')
